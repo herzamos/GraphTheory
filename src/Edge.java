@@ -1,4 +1,4 @@
-public class Edge {
+public class Edge implements Comparable<Edge>{
     int from;
     int to;
     int weight;
@@ -7,5 +7,10 @@ public class Edge {
         this.from = from;
         this.to = to;
         this.weight = weight;
+    }
+
+    @Override
+    public int compareTo(Edge other) {
+        return this.weight - other.weight;
     }
 }

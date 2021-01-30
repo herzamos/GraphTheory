@@ -3,9 +3,11 @@ import java.util.*;
 public class Graph {
 
     Map<Integer, Vertex> vertices;
+    List<Edge> edges;
 
     public Graph() {
         vertices = new HashMap<>();
+        edges = new ArrayList<>();
     } 
 
     public void addNode(int id) {
@@ -26,7 +28,9 @@ public class Graph {
         if (!vertices.keySet().contains(from) || !vertices.keySet().contains(to)) {
             throw new IllegalArgumentException("One of the two specified nodes couldn't be found in the graph");
         }
-        vertices.get(from).outEdges.add(new Edge(from, to, weight));
+        Edge edge = new Edge(from, to, weight);
+        vertices.get(from).outEdges.add(edge);
+        edges.add(edge);
     }
 
     public void addEdge(Edge edge) {
@@ -34,6 +38,7 @@ public class Graph {
             throw new IllegalArgumentException("One of the two specified nodes couldn't be found in the graph");
         }
         vertices.get(edge.from).outEdges.add(edge);
+        edges.add(edge);
     }
 
     public void addEdges(Set<Edge> edges) {

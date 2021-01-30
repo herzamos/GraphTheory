@@ -23,5 +23,8 @@ public class Main {
         System.out.println("----------------------------------------------------");
         DFS dfs = new DFS(graph, graph.vertices.get(0));
         System.out.print(dfs);
+        System.out.println("----------------------------------------------------");
+        MST mst = new MST(graph);
+        System.out.print(mst.Kruskal());
     }
 }

@@ -46,6 +46,7 @@ public class DFS {
             output += vertex.id + ", ";
         }
         output = output.substring(0, output.length()-2);
+        output += "\n";
         return output;
     }
 
